@@ -1,0 +1,6 @@
+1. 32
+2. 64
+3. semaphore is declared as a typedef structure, and initialized by SemCreate function. SemCreate will check if the semaphore is in use or reached max number of semaphore and update its count.
+4. Semwait: When the input sem'c count is lower or equal to 0, SemWait will put the process to sleep and it wil check if it can allocate and insert links for semaphore queue, if not, it does nothing, and in the end of semwait, it decreases sem's count by one.
+   Semsignal: if sem's count is larger than 0, it will check if there's a process waiting, and wakes up the waiting process, but if sem-> is less or equal to 0 or there's no process waiting, it does nothing.
+5. when a semahpore is created, it returns a handle, which is like an ID number for a semaphore, and when a semaphore needs to be waited, waked or done other operations, handle can lead the function to a certain sempahore.
